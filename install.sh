@@ -1,4 +1,5 @@
 # copy dotfiles into spin workspace
+cp .gitconfig ~/.gitconfig
 cp .tmux.conf ~/.tmux.conf
 cp .zshrc ~/.zshrc
 
