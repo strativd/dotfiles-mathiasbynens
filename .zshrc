@@ -10,4 +10,7 @@ zstyle ':vcs_info:*' enable git
 
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%~%b $vcs_info_msg_0_ $ '
 
-alias jest='yarn test --no-graphql'
+if [ $SPIN ]; then
+  alias jest='yarn test --no-graphql'
+  alias mfadd="bin/rails dev:metafields:create SHOP_ID=1"
+fi
