@@ -840,6 +840,8 @@
 	whitespace = fix
 
 [core]
+	# Make sure that interactive rebases open correctly with vs code
+	editor = code -n -w --new-window
 
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
@@ -857,9 +859,6 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
-
-	# Make sure that interactive rebases open correctly with vs code
-	editor = code -n -w
 
 [color]
 
