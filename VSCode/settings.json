@@ -1,0 +1,62 @@
+{
+  "editor.fontFamily" : "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#5c6ac4",
+    "editorBracketHighlight.foreground2": "#9c6ade",
+    "editorBracketHighlight.foreground3": "#47c1bf",
+    "editorBracketHighlight.foreground4": "#006fbb",
+    "editorBracketHighlight.foreground5": "#50b83c",
+    "editorBracketHighlight.foreground6": "#eec200",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#de3618"
+  },
+  "editor.guides.bracketPairs": true,
+  "diffEditor.ignoreTrimWhitespace" : false,
+  "javascript.updateImportsOnFileMove.enabled" : "always",
+  "emmet.includeLanguages" : {
+    "javascript" : "javascriptreact"
+  },
+  "files.associations" : {
+    "*.liquid" : "liquid"
+  },
+  "terminal.integrated.defaultLocation" : "editor",
+  "keyboard.touchbar.ignored" : [
+    "workbench.action.navigateBack",
+    "workbench.action.navigateForward"
+  ],
+  "security.workspace.trust.untrustedFiles" : "open",
+  "editor.tabSize" : 2,
+  "keyboard.touchbar.enabled" : false,
+  "[json]" : {
+    "editor.formatOnSave" : true,
+    "editor.formatOnPaste" : true
+  },
+  "workbench.startupEditor" : "newUntitledFile",
+  "editor.fontSize" : 13,
+  "emmet.excludeLanguages" : [
+    "markdown"
+  ],
+  "terminal.integrated.defaultProfile.osx" : "zsh",
+  "typescript.updateImportsOnFileMove.enabled" : "always",
+  "editor.accessibilitySupport" : "off",
+  "editor.formatOnPaste" : false,
+  "eslint.validate" : [
+    "javascript"
+  ],
+  "editor.formatOnSave" : false,
+  "remote.SSH.defaultExtensions" : [
+    "eamodio.gitlens",
+    "ms-vsliveshare.vsliveshare"
+  ],
+  "[javascript]" : {
+    "editor.formatOnSave" : true,
+    "editor.formatOnPaste" : true
+  },
+  "workbench.editor.wrapTabs" : true,
+  "editor.defaultFormatter" : "esbenp.prettier-vscode",
+  "editor.fontLigatures" : true,
+  "editor.codeActionsOnSave" : {
+    "source.fixAll.eslint" : true
+  },
+  "git.autofetch": true
+}
