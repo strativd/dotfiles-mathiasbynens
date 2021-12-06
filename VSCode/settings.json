@@ -42,12 +42,12 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.colorCustomizations": {
     "editorBracketHighlight.foreground1": "#5c6ac4",
-    "editorBracketHighlight.unexpectedBracket.foreground": "#de3618",
     "editorBracketHighlight.foreground4": "#006fbb",
     "editorBracketHighlight.foreground2": "#9c6ade",
     "editorBracketHighlight.foreground5": "#50b83c",
     "editorBracketHighlight.foreground3": "#47c1bf",
-    "editorBracketHighlight.foreground6": "#eec200"
+    "editorBracketHighlight.foreground6": "#eec200",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#de3618"
   },
   "eslint.validate": ["javascript"],
   "editor.formatOnSave": false,
