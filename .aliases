@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+######################################
+
+# Combine pdf files
+# Ex: => $ pdfcat doc1.pdf doc2.pdf doc3.pdf > combined.pdf
+alias pdfcat='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=-'
+# Print file contents in terminal
+alias show='less -FX'
+
+######################################
+
 # Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
@@ -7,17 +17,19 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Shortcuts
-alias d="cd ~/Dropbox"
+alias dr="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias g="git"
 
-# Hexo
-alias hs="hexo serve"
-alias hd="hexo gm && sw-precache --config source/sw-config.js && cp service-worker.js public && hexo deploy"
+######################################
 
-# Gulp
-alias gs="gulp serve"
+# # Hexo
+# alias hs="hexo serve"
+# alias hd="hexo gm && sw-precache --config source/sw-config.js && cp service-worker.js public && hexo deploy"
+
+# # Gulp
+# alias gs="gulp serve"
 
 # npm
 alias ng="npm list -g --depth=0"
@@ -103,12 +115,12 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias show.="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide.="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedt="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdt="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # URL-encode strings
 #alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
