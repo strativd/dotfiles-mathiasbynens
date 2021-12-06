@@ -2,7 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/stratbarrett/.oh-my-zsh"
+ZSH="/.oh-my-zsh"
+if [ -f /Users/stratbarrett/.oh-my-zsh ]; then
+  ZSH="/Users/stratbarrett/.oh-my-zsh"
+fi;
+if [ $SPIN ]; then
+  ZSH="/home/spin/.oh-my-zsh"
+fi;
+export ZSH
 
 ######################################
 ###   FORMATTING                   ###
@@ -68,6 +75,20 @@ ZSH_THEME="robbyrussell"
 ###   USER CONFIG                  ###
 ######################################
 
+# Beter zsh history
+# https://www.soberkoder.com/better-zsh-history/
+ZSH_HISTORY=~/.zsh_history
+if [ $SPIN ]; then
+  ZSH_HISTORY=/home/spin/.zsh_history
+fi
+
+export HISTFILE=$ZSH_HISTORY
+export HISTSIZE=1000
+export SAVEHIST=5000
+
+setopt HIST_FIND_NO_DUPS
+setopt INC_APPEND_HISTORY
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -108,7 +129,22 @@ source $ZSH/oh-my-zsh.sh
 ###   EXTEND                       ###
 ######################################
 
+### Use bash profile instead of ZSH theme
+# if [ -f ~/.bash_profile ]; then 
+#     . ~/.bash_profile;
+# fi
+
+# Include custom dotfiles
+for file in ~/.{path,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+# Shopify spin
 if [ $SPIN ]; then
   alias jest='yarn test --no-graphql'
   alias mfadd="bin/rails dev:metafields:create SHOP_ID=1"
 fi
+
+# Shopify dev
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
