@@ -1,62 +1,62 @@
 {
-  "editor.fontFamily" : "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.bracketPairColorization.enabled": true,
-  "workbench.colorCustomizations": {
-    "editorBracketHighlight.foreground1": "#5c6ac4",
-    "editorBracketHighlight.foreground2": "#9c6ade",
-    "editorBracketHighlight.foreground3": "#47c1bf",
-    "editorBracketHighlight.foreground4": "#006fbb",
-    "editorBracketHighlight.foreground5": "#50b83c",
-    "editorBracketHighlight.foreground6": "#eec200",
-    "editorBracketHighlight.unexpectedBracket.foreground": "#de3618"
+  "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.fontLigatures": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
+  "editor.formatOnPaste": false,
   "editor.guides.bracketPairs": true,
-  "diffEditor.ignoreTrimWhitespace" : false,
-  "javascript.updateImportsOnFileMove.enabled" : "always",
-  "emmet.includeLanguages" : {
-    "javascript" : "javascriptreact"
-  },
-  "files.associations" : {
-    "*.liquid" : "liquid"
-  },
-  "terminal.integrated.defaultLocation" : "editor",
-  "keyboard.touchbar.ignored" : [
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.accessibilitySupport": "off",
+  "editor.fontSize": 13,
+  "keyboard.touchbar.ignored": [
     "workbench.action.navigateBack",
     "workbench.action.navigateForward"
   ],
-  "security.workspace.trust.untrustedFiles" : "open",
-  "editor.tabSize" : 2,
-  "keyboard.touchbar.enabled" : false,
-  "[json]" : {
-    "editor.formatOnSave" : true,
-    "editor.formatOnPaste" : true
+  "editor.bracketPairColorization.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.associations": {
+    "*.liquid": "liquid"
   },
-  "workbench.startupEditor" : "newUntitledFile",
-  "editor.fontSize" : 13,
-  "emmet.excludeLanguages" : [
-    "markdown"
-  ],
-  "terminal.integrated.defaultProfile.osx" : "zsh",
-  "typescript.updateImportsOnFileMove.enabled" : "always",
-  "editor.accessibilitySupport" : "off",
-  "editor.formatOnPaste" : false,
-  "eslint.validate" : [
-    "javascript"
-  ],
-  "editor.formatOnSave" : false,
-  "remote.SSH.defaultExtensions" : [
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "keyboard.touchbar.enabled": false,
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "terminal.integrated.defaultLocation": "editor",
+  "workbench.editor.wrapTabs": true,
+  "emmet.excludeLanguages": ["markdown"],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "remote.SSH.defaultExtensions": [
     "eamodio.gitlens",
-    "ms-vsliveshare.vsliveshare"
+    "ms-vsliveshare.vsliveshare",
+    "natqe.reload"
   ],
-  "[javascript]" : {
-    "editor.formatOnSave" : true,
-    "editor.formatOnPaste" : true
+  "workbench.startupEditor": "newUntitledFile",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#5c6ac4",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#de3618",
+    "editorBracketHighlight.foreground4": "#006fbb",
+    "editorBracketHighlight.foreground2": "#9c6ade",
+    "editorBracketHighlight.foreground5": "#50b83c",
+    "editorBracketHighlight.foreground3": "#47c1bf",
+    "editorBracketHighlight.foreground6": "#eec200"
   },
-  "workbench.editor.wrapTabs" : true,
-  "editor.defaultFormatter" : "esbenp.prettier-vscode",
-  "editor.fontLigatures" : true,
-  "editor.codeActionsOnSave" : {
-    "source.fixAll.eslint" : true
+  "eslint.validate": ["javascript"],
+  "editor.formatOnSave": false,
+  "git.autofetch": true,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
   },
-  "git.autofetch": true
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  }
 }
