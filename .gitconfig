@@ -121,6 +121,9 @@
 
 	### log ###
 
+	# find commits by commit message
+	l-m = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
 	# log with a text-based graphical representation of the commit history.
 	lg = log --graph
 
@@ -509,12 +512,12 @@
 
 	# 🌟
 	# Do a push/pull for just one branch
-	pushon = "!git push origin $(git branch-name)"
-	pullon = "!git pull origin $(git branch-name)"
+	pushon = !git push origin $(git branch-name)
+	pullon = !git pull origin $(git branch-name)
 
 	# 🌟
 	# Do a force push of current branch
-	push-f = "!git push -f origin $(git branch-name) --force-with-lease"
+	push-f = !git push -f origin $(git branch-name) --force-with-lease
 
 	##
 	# Reset & Undo
@@ -526,15 +529,15 @@
 	reset-commit-hard  = reset --hard HEAD~1
 	reset-commit-clean = !git reset --hard HEAD~1 && git clean -fd
 	reset-stage        = reset --hard HEAD
-	reset-to-pristine  = !git reset --hard && git clean -ffdx
-	reset-to-upstream  = !git reset --hard $(git upstream-name)
+	reset-to-local  = !git reset --hard && git clean -ffdx
+	reset-to-origin  = !git reset --hard $(git upstream-name)
 
 	# Undo is simply a synonym for "reset" because "undo" can help novices.
 	undo-commit        = reset --soft HEAD~1
 	undo-commit-hard   = reset --hard HEAD~1
 	undo-commit-clean  = !git reset --hard HEAD~1 && git clean -fd
-	undo-to-pristine   = !git reset --hard && git clean -ffdx
-	undo-to-upstream   = !git reset --hard $(git upstream-name)
+	undo-to-local   = !git reset --hard && git clean -ffdx
+	undo-to-origin   = !git reset --hard $(git upstream-name)
 
 	# Nicknames
 	uncommit = reset --soft HEAD~1
@@ -899,6 +902,12 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+[rerere]
+	# $ git rerere ("reuse recorded resolution")
+	# resolve conflicts that occur multiple times
+	enabled = true
+	autoupdate = true
 
 [push]
 
