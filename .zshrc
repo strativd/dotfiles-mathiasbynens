@@ -2,13 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-ZSH="/.oh-my-zsh"
-if [ -f /Users/stratbarrett/.oh-my-zsh ]; then
-  ZSH="/Users/stratbarrett/.oh-my-zsh"
-fi;
-if [ $SPIN ]; then
-  ZSH="/home/spin/.oh-my-zsh"
-fi;
+ZSH=~/.oh-my-zsh
+ZSH_HISTORY=~/.zsh_history
+
 export ZSH
 
 ######################################
@@ -77,15 +73,15 @@ ZSH_THEME="robbyrussell"
 
 # Beter zsh history
 # https://www.soberkoder.com/better-zsh-history/
-ZSH_HISTORY=~/.zsh_history
-if [ $SPIN ]; then
-  ZSH_HISTORY=/home/spin/.zsh_history
-fi
-
 export HISTFILE=$ZSH_HISTORY
 export HISTSIZE=1000
 export SAVEHIST=5000
+# Ignore history duplicates and commands starting with a whitespace
+export HISTCONTROL=ignoreboth:erasedups
 
+# This makes it history isn't shared between opened tabs.
+setopt NO_SHARE_HISTORY
+setopt APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt INC_APPEND_HISTORY
 
@@ -102,7 +98,11 @@ plugins=(git)
 
 ZSH_DISABLE_COMPFIX=true
 
-source $ZSH/oh-my-zsh.sh
+if [ -f "$ZSH/oh-my-zsh.sh" ]; then
+  source $ZSH/oh-my-zsh.sh
+else
+  echo "⛔️ OH MY... Could not find $ZSH/oh-my-zsh.sh"
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -140,7 +140,7 @@ for file in ~/.{path,aliases,functions,extra}; do
 done;
 unset file;
 
-# Shopify spin
+# Shopify spin 🌀
 if [ $SPIN ]; then
   alias jest='yarn test --no-graphql'
   alias mfadd="bin/rails dev:metafields:create SHOP_ID=1"
