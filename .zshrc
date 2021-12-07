@@ -101,7 +101,7 @@ ZSH_DISABLE_COMPFIX=true
 if [ -f "$ZSH/oh-my-zsh.sh" ]; then
   source $ZSH/oh-my-zsh.sh
 else
-  echo "⛔️ OH MY... Could not find $ZSH/oh-my-zsh.sh"
+  echo "⛔️ OH MY... ZSH: could not find $ZSH/oh-my-zsh.sh"
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
