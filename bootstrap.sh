@@ -4,20 +4,23 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-
 function linkEmUp() {
-  ln -sf "$SCRIPT_DIR/.editorconfig" ~/.editorconfig
-  ln -sf "$SCRIPT_DIR/.exports" ~/.exports
-  ln -sf "$SCRIPT_DIR/.gitconfig" ~/.gitconfig
-  ln -sf "$SCRIPT_DIR/.gvimrc" ~/.gvimrc
-  ln -sf "$SCRIPT_DIR/.inputrc" ~/.inputrc
-  ln -sf "$SCRIPT_DIR/.tmux.conf" ~/.tmux.conf
-  ln -sf "$SCRIPT_DIR/.vimrc" ~/.vimrc
-  ln -sf "$SCRIPT_DIR/.zshrc" ~/.zshrc
-  ln -sf "$SCRIPT_DIR/.functions" ~/.functions
-  ln -sf "$SCRIPT_DIR/.aliases" ~/.aliases
-  ln -sf "$SCRIPT_DIR/.extra" ~/.extra
+  THIS_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+  TARGET_DIR="~/"
+  # link dofiles from bootstrap.sh directory to target directory
+  ln --symbolic --force \
+    "${THIS_DIR}/.editorconfig" \
+    "${THIS_DIR}/.exports" \
+    "${THIS_DIR}/.gitconfig" \
+    "${THIS_DIR}/.gvimrc" \
+    "${THIS_DIR}/.inputrc" \
+    "${THIS_DIR}/.tmux.conf" \
+    "${THIS_DIR}/.vimrc" \
+    "${THIS_DIR}/.zshrc" \
+    "${THIS_DIR}/.functions" \
+    "${THIS_DIR}/.aliases" \
+    "${THIS_DIR}/.extra" \
+    "${TARGET_DIR}"
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
