@@ -4,9 +4,9 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
+THIS_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 function linkEmUp() {
-  THIS_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-  TARGET_DIR="~/"
   # link dofiles from bootstrap.sh directory to target directory
   ln --symbolic --force \
     "${THIS_DIR}/.editorconfig" \
@@ -20,7 +20,7 @@ function linkEmUp() {
     "${THIS_DIR}/.functions" \
     "${THIS_DIR}/.aliases" \
     "${THIS_DIR}/.extra" \
-    "${TARGET_DIR}"
+    ~
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
