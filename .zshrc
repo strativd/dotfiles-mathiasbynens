@@ -71,6 +71,9 @@ ZSH_THEME="robbyrussell"
 ###   USER CONFIG                  ###
 ######################################
 
+### Autocomplete
+autoload -Uz compinit && compinit
+
 # Beter zsh history
 # https://www.soberkoder.com/better-zsh-history/
 export HISTFILE=$ZSH_HISTORY
@@ -146,7 +149,7 @@ if [ $SPIN ]; then
   alias mfadd="bin/rails dev:metafields:create SHOP_ID=1"
 
   # Spin prompt
-  autoload -Uz vcs_info
+  # autoload -Uz vcs_info
   precmd_functions+=( vcs_info )
   setopt prompt_subst
 
